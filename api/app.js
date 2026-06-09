@@ -27,4 +27,4 @@ response.render("index",{weather:null,error:error})
 }
 
 )
-app.listen(5000)
+module.exports=app
