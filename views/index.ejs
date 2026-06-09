@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Weather Application</h1>
+         <form method="POST" action="/weather">
+             <!-- <--! mandatory !-->
+            <input type="text" name="city" placeholder="Enter the place name" required>
+            <button > search</button>
+        </form>
+
+        <% if(typeof error != 'undefined'){ %> 
+            <h3><%= error %></h3>
+            <% } %>
+       <% if(weather){ %>
+       <div class="weather-card"><h2><%= weather.name%></h2>
+        <h2><%= weather.sys.country %></h2>
+        <h2><%= weather.main.temp %></h2>
+        <img src="https://api.openweathermap.org/img/wn/<%= weather.weather[0] %>" alt="">
+        <h2><%= weather.sys.country %></h2></div>
+        
+        <% } %>
+    </div>
+</body>
+</html>
